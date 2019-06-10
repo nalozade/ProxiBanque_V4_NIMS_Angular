@@ -1,0 +1,67 @@
+<div class="row">
+
+    <div class="col-6 offset-3 card">
+
+        <form>
+            <h3 class="mb-3 text-center">Create Client</h3>
+
+            <div class="form-group">
+
+                <div class=" form-group row">
+                    <div class="col">
+                        <input type="text" [(ngModel)]="clientDetails.firstname" name="firstname" class="form-control"
+                            placeholder="Firstname">
+                    </div>
+                </div>
+
+                <div class=" form-group row">
+                    <div class="col">
+                        <input type="text" [(ngModel)]="clientDetails.lastname" name="lastname" class="form-control"
+                            placeholder="Lastname">
+                    </div>
+                </div>
+
+
+
+                <div class=" form-group row">
+                    <div class="col">
+                            <input type="text" [(ngModel)]="clientDetails.email" name="email" class="form-control"
+                            placeholder="Email">
+                    </div>
+                </div>
+
+                
+
+                <div class=" form-group row">
+                        <div class="col">
+                                <input type="text" [(ngModel)]="clientDetails.telephone" name="telephone" class="form-control"
+                                placeholder="Telephone">
+                        </div>
+                    </div>
+
+                <div class=" form-group row">
+                    <div class="col">
+                        <input type="text" name="address" class="form-control" value="{{clientDetails.address}}"
+                            [(ngModel)]="clientDetails.address" placeholder="Adress">
+                    </div>
+                    <div class="col-3">
+                        <input type="text" name="City" class="form-control" value="{{clientDetails.city}}"
+                            [(ngModel)]="clientDetails.city" placeholder="City">
+                    </div>
+                    <div class="col-3">
+                        <input type="text" name="postalCode" class="form-control" value="{{clientDetails.postalCode}}"
+                            [(ngModel)]="clientDetails.postalCode" placeholder="Postal Code">
+                    </div>
+                </div>
+
+
+
+                <div class="row col-4 offset-4">
+
+                    <button class="btn btn-success btn-lg btn-block" (click)="addClient()">Create Client</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

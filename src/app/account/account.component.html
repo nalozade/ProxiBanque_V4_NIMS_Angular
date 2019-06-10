@@ -1,0 +1,48 @@
+<div class="col-6 offset-3">
+  <form #transferForm (ngSubmit)="validateTransfer(transferForm)">
+
+    <div class="card">
+
+      <div class="card-body">
+        <!-- <h5 class="card-title">{{clientDetails.firstname}} {{clientDetails.lastname}}</h5> -->
+        <hr>
+        <div class="input-group mb-3" style="border-color: green;">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Compte Crediteur</label>
+          </div>
+          <select required class="custom-select" #credit id="crediteur" name="crediteur" [(ngModel)]="crediteur">
+           
+            <option *ngFor="let account of accounts" [ngValue]='account'>{{account.accountNumber}} Solde :
+              {{account.balance}}</option>
+          </select>
+        </div>
+
+        <div class="input-group mb-3" style="border-color: red;">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Compte Debiteur</label>
+          </div>
+          <select required class="custom-select" id="debiteur" #debit name="debiteur" [(ngModel)]="debiteur">
+          
+            <option *ngFor="let account of accounts" [ngValue]='account'>{{account.accountNumber}} Solde :
+              {{account.balance}}</option>
+          </select>
+        </div>
+        <div class="form-group row">
+
+          <label for="" class=" col-3 col-form-label">Montant :</label>
+          <div class="col-sm-9">
+            <input required type="text" class="form-control" name="montant" [(ngModel)]="montant">
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <input class="btn btn-info" type="submit" value="Register">
+
+
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+</div>

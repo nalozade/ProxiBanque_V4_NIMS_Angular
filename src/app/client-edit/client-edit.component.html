@@ -1,0 +1,35 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+        <form #mainForm="ngForm">
+            <h3 class="mb-3 text-center">Update Client</h3>
+
+            <div class="form-group">
+                <input type="text" [(ngModel)]="clientDetails.nom" name="nom" [value]="clientDetails.nom" class="form-control" placeholder="Nom">
+
+
+
+                <input type="text" [(ngModel)]="clientDetails.prenom" name="prenom" [value]="clientDetails.prenom" class="form-control" placeholder="Prenom">
+
+
+
+                <input type="text" [(ngModel)]="clientDetails.login" name="login" [value]="clientDetails.login" class="form-control" placeholder="Login">
+
+  
+                    <input type="text" [(ngModel)]="clientDetails.adresse.numero" name="numero" [value]="clientDetails.adresse.numero" class="form-control"
+                        placeholder="numero">
+
+
+                    <input type="text" [(ngModel)]="clientDetails.adresse.rue" name="rue" [value]="clientDetails.adresse.rue" class="form-control" placeholder="rue">
+
+
+                    <input type="text" [(ngModel)]="clientDetails.adresse.ville" name="ville" [value]="clientDetails.adresse.ville" class="form-control"
+                        placeholder="ville">
+
+  
+
+
+                <button class="btn btn-success btn-lg btn-block" (click)="updateClient()">Update Client</button>
+            </div>
+        </form>
+    </div>
+</div>

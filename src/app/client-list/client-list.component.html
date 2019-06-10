@@ -1,0 +1,40 @@
+<div class="container custom-container-2 card">
+
+  
+    <div class="no-data text-center" *ngIf="client.length == 0">
+    <p>There is no client added yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-client">Add client</button>
+  </div>
+
+  <div *ngIf="client.length !== 0">
+    <h3 class="mb-3 text-center">Clients List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col"> Id</th>
+            <th scope="col">firstname</th>
+            <th scope="col">lastname</th>
+            <th scope="col">telephone</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of client" (click)="clientSelected(c.id)">
+            <td>{{c.id}}</td>
+            <td>{{c.firstname}}</td>
+            <td>{{c.lastname}}</td>
+            <td>{{c.telephone}}</td>
+            <td >       
+              <button class="btn btn-info mr-1" routerLink="/client-show/{{c.id}}">Show</button>
+              <button class="btn btn-danger" (click)="deleteClient(c.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
